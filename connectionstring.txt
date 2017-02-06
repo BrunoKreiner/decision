@@ -1,0 +1,16 @@
+<add name="MuiConnectionString" connectionString="Server=zur133-siwa;Database=YR-Gruppe_MUI;User ID=webuser_mui;Password=true" providerName="System.Data.SqlClient"/>
+
+
+change public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    {
+        public ApplicationDbContext()
+            : base("ConnectionStringName", throwIfV1Schema: false)
+        {
+        }
+
+        public static ApplicationDbContext Create()
+        {
+            return new ApplicationDbContext();
+        }
+    }
+to connection string name=MuiConnectionString
